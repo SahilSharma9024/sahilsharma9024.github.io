@@ -4,7 +4,7 @@ const links = {
   github: 'https://github.com/Sahilsharma9024',
   twitter: 'https://x.com/Sahilsharma9024?t=gq1AdoLdHz1GwJ6lldpOFQ&s=09',
   email: 'sahilsharmaas2006@gmail.com',
-  whatsapp: 'https://wa.me/+919024442872'
+  whatsapp: ''
 };
 
 // Gmail compose URL helper
@@ -199,3 +199,4 @@ navButtons.forEach(btn => {
     closePanel();
   });
 });
+
