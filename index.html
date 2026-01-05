@@ -82,7 +82,7 @@
         </section>
 
         <section class="card fade-up fade-delay-3" style="margin-top:16px" id="skills">
-          <h2>Skills</h2>
+          <h2>Skills and Tools</h2>
           <div class="skills" style="margin-top:8px">
             <span class="skill">Python</span>
             <span class="skill">C</span>
@@ -94,7 +94,11 @@
             <span class="skill">Prompt engineering</span>
             <span class="skill">Data Handling</span>
             <span class="skill">Backend Development</span>
+            <span class="skill">VS Code</span>
             <span class="skill">Large Language Model (LLM) integration</span>
+            <span class="skill">C</span>
+            <span class="skill">C</span>
+            <span class="skill">C</span>
           </div>
         </section>
 
@@ -147,20 +151,46 @@
 
               <div class="project-desc" aria-hidden="true">
                 <div class="project-desc-inner">
-                  <p><strong>Description:</strong> An automation system that discovers the latest AI news, generates clean summaries, and posts them across Twitter, LinkedIn, and WhatsApp groups. Designed to keep audiences updated automatically using real-time AI news.</p>
-                  <div class="project-highlights">
+                  <p><strong>Description:</strong> An automation system designed to keep social media audiences informed about the latest developments in Artificial Intelligence. The tool monitors trending topics, creates concise summaries of news articles, and automatically shares them across Twitter, LinkedIn, and WhatsApp.</p>
+                  
+                  <div class="project-highlights" style="margin-top:12px">
                     <strong>Highlights -</strong>
                     <ul style="margin:6px 0 0 18px;color:var(--muted)">
-                      <li>Automated link search for trending AI topics</li>
-                      <li>AI-based summarization for creating short news snippets</li>
-                      <li>Auto-posting on Twitter, LinkedIn &amp; WhatsApp</li>
-                      <li>Chrome-profile login for seamless repeated runs</li>
-                      <li>Fully automated end-to-end pipeline</li>
+                      <li><strong>Automated Sourcing:</strong> Finds the most relevant AI news links based on specific topics.</li>
+                      <li><strong>AI Summaries:</strong> Converts long articles into short, engaging snippets using the Google Gemini API.</li>
+                      <li><strong>Multi-Platform:</strong> Posts directly to Twitter, LinkedIn, and WhatsApp in one workflow.</li>
+                      <li><strong>Smooth Login:</strong> Uses Chrome profiles to stay logged in and avoid manual steps.</li>
+                      <li><strong>Logging:</strong> Saves every post to a local file for easy record-keeping.</li>
                     </ul>
                   </div>
-                  <div class="project-role">
+
+                  <div class="project-workflow" style="margin-top:12px">
+                    <strong>Workflow -</strong>
+                    <ol style="margin:6px 0 0 18px;color:var(--muted)">
+                      <li>Search APIs find the latest URLs for trending AI news.</li>
+                      <li>AI generates a short, catchy summary for each article.</li>
+                      <li>Selenium opens a pre-logged-in Chrome instance.</li>
+                      <li>The tool automatically posts to Twitter and LinkedIn feeds.</li>
+                      <li>Snippets are sent to specific WhatsApp groups from a list.</li>
+                    </ol>
+                  </div>
+
+                  <div class="project-tech" style="margin-top:12px">
+                    <strong>Tech Stack -</strong>
+                    <p style="margin:4px 0 0 0;color:var(--muted)">Python, Selenium(for browser automation), Google Gemini API(for content generation and summarization), Serper API(for news links searching), Serp API(for website scrapping), CSV, Md, Txt(for data organisation).</p>
+                  </div>
+
+                  <div class="project-demo" style="margin-top:15px; padding: 10px;">
+                    <strong>Project Links -</strong>
+                    <div style="display:flex; gap:15px; margin-top:8px;">
+                      <a href="https://github.com/SahilSharma9024/Snippets_AI" target="_blank" style="color:#60a5fa; text-decoration: none; font-size: 14px;">📂 GitHub Repository</a>
+                      <a href="https://drive.google.com/file/d/1gk5Jqcu7jY6SeG5mIQ6x5z4iL5KbDtPN/view?usp=drive_link" target="_blank" style="color:#60a5fa; text-decoration: none; font-size: 14px;">📺 Watch Demo Video(not available now)</a>
+                    </div>
+                  </div>
+
+                  <div class="project-role" style="margin-top:12px">
                     <strong>Role -</strong>
-                    <div style="margin-top:6px;color:var(--muted)">Built the complete workflow: news discovery → summarization → posting automation.</div>
+                    <div style="margin-top:6px;color:var(--muted)">Built the complete pipeline: from news discovery and AI integration to browser automation and multi-platform posting.</div>
                   </div>
                 </div>
               </div>
@@ -274,5 +304,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
