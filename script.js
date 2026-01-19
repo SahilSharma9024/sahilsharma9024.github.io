@@ -1,10 +1,60 @@
+// Welcome Screen with Typewriter Effect
+document.addEventListener('DOMContentLoaded', () => {
+  const welcomeScreen = document.getElementById('welcomeScreen');
+  const mainContent = document.getElementById('mainContent');
+  const welcomeTypewriter = document.getElementById('welcomeTypewriter');
+  
+  const text = 'Hi, I am Sahil Sharma.\n';
+  const typeSpeed = 250; // ms per letter
+  const pauseAfter = 2500; // ms to wait after typing completes
+  
+  // Typewriter effect for "Welcome"
+  if (welcomeTypewriter) {
+    let i = 0;
+    welcomeTypewriter.textContent = '';
+    
+    function typeWriter() {
+      if (i < text.length) {
+        welcomeTypewriter.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, typeSpeed);
+      }
+    }
+    
+    // Start typing after a brief delay
+    setTimeout(typeWriter, 100);
+  }
+  
+  // Transition logic
+  if (welcomeScreen && mainContent) {
+    // Show welcome screen for pauseAfter ms after typing completes, then transition
+    const totalWaitTime = 100 + (text.length * typeSpeed) + pauseAfter;
+    
+    setTimeout(() => {
+      welcomeScreen.classList.add('fade-out');
+      
+      // After fade-out animation completes, show main content
+      setTimeout(() => {
+        welcomeScreen.style.display = 'none';
+        mainContent.style.display = 'block';
+        mainContent.classList.add('main-content');
+      }, 600); // Match fadeOut animation duration
+    }, totalWaitTime);
+  } else {
+    // If welcome screen elements don't exist, show main content immediately
+    if (mainContent) {
+      mainContent.style.display = 'block';
+    }
+  }
+});
+
 // --- USER: Paste your actual links here or edit in the file directly ---
 const links = {
   linkedin: 'https://www.linkedin.com/in/sahil-sharma-155697349?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7y%2B2WZJsSRuJFmyM8jQkDA%3D%3D',
   github: 'https://github.com/Sahilsharma9024',
   twitter: 'https://x.com/Sahilsharma9024?t=gq1AdoLdHz1GwJ6lldpOFQ&s=09',
   email: 'sahilsharmaas2006@gmail.com',
-  whatsapp: ''
+  whatsapp: '' 
 };
 
 // Gmail compose URL helper
@@ -19,6 +69,32 @@ const gmailCTA = gmailComposeUrl(
   'Hello Sahil',
   'Hi Sahil,\n\nI would love to connect with you regarding your work.'
 );
+
+// Name typewriter loop
+document.addEventListener('DOMContentLoaded', () => {
+  const nameEl = document.getElementById('typewriterName');
+  if (!nameEl) return;
+  const fullName = nameEl.dataset.fullname || nameEl.textContent.trim();
+  const speed = 150; // ms per letter
+  const pauseAfter = 5000; // 10s before restarting
+
+  function cycle() {
+    nameEl.textContent = '';
+    let i = 0;
+    function type() {
+      if (i <= fullName.length) {
+        nameEl.textContent = fullName.slice(0, i);
+        i += 1;
+        setTimeout(type, speed);
+      } else {
+        setTimeout(cycle, pauseAfter);
+      }
+    }
+    type();
+  }
+
+  cycle();
+});
 
 // Attach header social links
 document.getElementById('link-linkedin').href = links.linkedin;
@@ -199,4 +275,3 @@ navButtons.forEach(btn => {
     closePanel();
   });
 });
-
