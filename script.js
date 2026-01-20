@@ -3,10 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcomeScreen = document.getElementById('welcomeScreen');
   const mainContent = document.getElementById('mainContent');
   const welcomeTypewriter = document.getElementById('welcomeTypewriter');
+  const welcomeSubtitle = document.querySelector('.welcome-screen__subtitle');
   
-  const text = 'Hi, I am Sahil Sharma.\n';
+  const text = 'Hi, I\'m Sahil Sharma.\n';
   const typeSpeed = 250; // ms per letter
   const pauseAfter = 2500; // ms to wait after typing completes
+
+  // Hide subtitle initially so it appears only after typing completes
+  if (welcomeSubtitle) {
+    welcomeSubtitle.style.opacity = '0';
+    welcomeSubtitle.style.transition = 'opacity 0.4s ease';
+  }
   
   // Typewriter effect for "Welcome"
   if (welcomeTypewriter) {
@@ -23,6 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Start typing after a brief delay
     setTimeout(typeWriter, 100);
+
+    // Show subtitle right after typing finishes
+    if (welcomeSubtitle) {
+      const typingDuration = text.length * typeSpeed;
+      setTimeout(() => {
+        welcomeSubtitle.style.opacity = '1';
+      }, 100 + typingDuration);
+    }
   }
   
   // Transition logic
